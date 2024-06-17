@@ -1,7 +1,8 @@
 import Navbar from '@/components/Navbar'
 import Sidebar from '@/components/Sidebar'
 import { Metadata } from 'next';
-import { ReactNode } from 'react'
+import { ReactNode } from 'react';
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
     title: "Soon",
@@ -27,6 +28,8 @@ const HomeLayout = (
                     </div>
                 </section>
             </div>
+
+            <Toaster />
         </main>
     )
 }
