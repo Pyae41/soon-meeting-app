@@ -14,7 +14,7 @@ interface MeetingModalProps {
     image?: string;
     buttonIcon?: string;
     title: string;
-    buttonText: string;
+    buttonText?: string;
     isOpen: boolean;
     onClose: () => void;
     handleClick: () => void;
