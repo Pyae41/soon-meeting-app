@@ -7,6 +7,7 @@ import { Call, useStreamVideoClient } from "@stream-io/video-react-sdk";
 import { useToast } from "./ui/use-toast";
 import { Textarea } from "./ui/textarea";
 import ReactDatePicker from 'react-datepicker';
+import { Input } from "./ui/input";
 
 
 const MeetingTypeList = () => {
@@ -127,9 +128,9 @@ const MeetingTypeList = () => {
                             <label htmlFor="" className="text-base text-normal leading-[22px] text-sky-2">
                                 Select date and time
                             </label>
-                            <ReactDatePicker 
+                            <ReactDatePicker
                                 selected={values.dateTime}
-                                onChange={(date) => setValues({...values,dateTime: date!})}
+                                onChange={(date) => setValues({ ...values, dateTime: date! })}
                                 showTimeSelect
                                 timeFormat="HH:mm"
                                 timeIntervals={15}
@@ -151,7 +152,7 @@ const MeetingTypeList = () => {
                         buttonText="Copy Meeting Link"
                         handleClick={() => {
                             navigator.clipboard.writeText(meetingLink);
-                            toast({title: 'Link copied'})
+                            toast({ title: 'Link copied' })
                         }}
                     />
                 )
@@ -164,6 +165,20 @@ const MeetingTypeList = () => {
                 buttonText="Start Meeting"
                 handleClick={createMeeting}
             />
+
+            <MeetingModal
+                isOpen={meetingType === 'isJoining'}
+                onClose={() => setMeetingType(undefined)}
+                title="Type the link here"
+                className="text-center"
+                buttonText="Join Meeting"
+                handleClick={() => router.push(values.link)}
+            >
+                <Input
+                    placeholder="Meeting Link"
+                    className="border-none bg-dark-3 focus-visible:ring-0 focus-visible:ring-offset-0"
+                />
+            </MeetingModal>
         </section>
     )
 }
