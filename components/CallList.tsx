@@ -4,9 +4,9 @@ import { Call, CallRecording } from '@stream-io/video-react-sdk';
 
 import Loader from './Loader';
 import { useGetCalls } from '@/hooks/useGetCalls';
-import MeetingCard from './MeetingCard';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import CallCard from './CallCard';
 
 const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
   const router = useRouter();
@@ -67,7 +67,7 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
     <div className="grid grid-cols-1 gap-5 xl:grid-cols-2">
       {calls && calls.length > 0 ? (
         calls.map((meeting: Call | CallRecording) => (
-          <MeetingCard
+          <CallCard
             key={(meeting as Call).id}
             icon={
               type === 'ended'
