@@ -52,7 +52,7 @@ export const useGetCalls = () => {
     return {
         endedCalls,
         upcomingCalls,
-        callRecords: calls,
+        callRecordings: calls,
         isLoading
     };
 }
