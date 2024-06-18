@@ -85,7 +85,7 @@ const CallList = (
                     }
                     title={(meeting as Call).state?.custom?.description?.substring(0, 20)
                         || (meeting as CallRecording)?.filename?.substring(0,20) || 'Personal Meeting'}
-                    date={meeting.state?.startsAt.toLocaleString() || meeting?.start_time.toLocaleString()}
+                    date={(meeting as Call).state?.startsAt.toLocaleString() || meeting?.start_time.toLocaleString()}
                     isPreviousMeeting={type === 'ended'}
                     buttonIcon1={type === 'recordings' ? '/icons/play.svg' : undefined}
                     handleClick={type === 'recordings' ?
