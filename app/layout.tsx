@@ -26,7 +26,7 @@ export default function RootLayout({
       <ClerkProvider
         appearance={{
           layout: {
-            logoImageUrl: '/icons/soon-logo.svg',
+            // logoImageUrl: '/icons/soon-logo.svg',
             socialButtonsVariant: 'iconButton'
           },
           variables: {
