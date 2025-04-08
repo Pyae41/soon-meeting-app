@@ -30,7 +30,7 @@ To learn more about Next.js, take a look at the following resources:
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
 ## Demo Link
-Open[https://soon-meeting-nckzi6tzb-pyae-phyo-zans-projects.vercel.app]
+Open[https://soon-meeting-app.vercel.app]
 
 ## Deploy on Vercel
 
